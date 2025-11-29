@@ -297,6 +297,7 @@ export default buildConfig({
     'http://localhost:3000',
     'https://goldfingersaesthetics-zeta.vercel.app',
     'https://www.goldfingersaesthetics.com',
+    'https://goldfingersaesthetics.com',
     'https://lastgoldfingersaesthetics.vercel.app',
     'https://frontend-self-gamma-99.vercel.app',
   ],
