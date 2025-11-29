@@ -298,6 +298,7 @@ export default buildConfig({
     'https://goldfingersaesthetics-zeta.vercel.app',
     'https://www.goldfingersaesthetics.com',
     'https://lastgoldfingersaesthetics.vercel.app',
+    'https://frontend-self-gamma-99.vercel.app',
   ],
   plugins: [
     payloadCloudPlugin(),
