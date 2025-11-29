@@ -180,6 +180,7 @@ export interface Config {
     'terms-and-conditions-page-component': TermsAndConditionsPageComponent;
     'privacy-policy-page-component': PrivacyPolicyPageComponent;
     'sitemap-page-component': SitemapPageComponent;
+    'membership-page-component': MembershipPageComponent;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -299,6 +300,7 @@ export interface Config {
     'terms-and-conditions-page-component': TermsAndConditionsPageComponentSelect<false> | TermsAndConditionsPageComponentSelect<true>;
     'privacy-policy-page-component': PrivacyPolicyPageComponentSelect<false> | PrivacyPolicyPageComponentSelect<true>;
     'sitemap-page-component': SitemapPageComponentSelect<false> | SitemapPageComponentSelect<true>;
+    'membership-page-component': MembershipPageComponentSelect<false> | MembershipPageComponentSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -39558,6 +39560,525 @@ export interface SitemapPageComponent {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "membership-page-component".
+ */
+export interface MembershipPageComponent {
+  id: string;
+  componentName: string;
+  heroSection: {
+    show?: boolean | null;
+    /**
+     * e.g., banner, mobile-stack, less-padding
+     */
+    className?: string | null;
+    /**
+     * CSS color value (e.g., #ffffff, rgba(0,0,0,0.5))
+     */
+    backgroundColor?: string | null;
+    backgroundImage?: {
+      mobile?: (string | null) | Media;
+      tablet?: (string | null) | Media;
+      desktop?: (string | null) | Media;
+      large?: (string | null) | Media;
+      alt?: string | null;
+    };
+    /**
+     * Drag to reorder breadcrumb items
+     */
+    breadcrumbs?:
+      | {
+          label: string;
+          url: string;
+          ariaLabel?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+    title: string;
+    /**
+     * CSS color value
+     */
+    titleColor?: string | null;
+    /**
+     * CSS font-size value (e.g., 48px, 3rem)
+     */
+    titleFontSize?: string | null;
+    mediaImage: {
+      mobile?: (string | null) | Media;
+      tablet?: (string | null) | Media;
+      desktop?: (string | null) | Media;
+      large?: (string | null) | Media;
+      alt: string;
+    };
+  };
+  introSection: {
+    show?: boolean | null;
+    /**
+     * e.g., option-1, viewport, container, wide
+     */
+    className?: string | null;
+    backgroundColor?: string | null;
+    textColor?: string | null;
+    /**
+     * CSS padding value (e.g., 0, 20px, 2rem)
+     */
+    paddingBottom?: string | null;
+    logo?: (string | null) | Media;
+    logoAlt?: string | null;
+    logoWidth?: string | null;
+    logoHeight?: string | null;
+    heading: string;
+    headingColor?: string | null;
+    contentParagraph1?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    contentParagraph2?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+  };
+  halfImageSection1: {
+    show?: boolean | null;
+    /**
+     * e.g., viewport, half-image, container
+     */
+    className?: string | null;
+    backgroundColor?: string | null;
+    textColor?: string | null;
+    imagePosition?: ('left' | 'flipped') | null;
+    verticalAlignment?: ('top' | 'center' | 'bottom') | null;
+    /**
+     * CSS margin classes (e.g., mb-80-desktop mb-40-tablet-down)
+     */
+    marginBottom?: string | null;
+    copyPadding?: boolean | null;
+    heading: string;
+    headingColor?: string | null;
+    content: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    image: {
+      mobile?: (string | null) | Media;
+      tablet?: (string | null) | Media;
+      desktop?: (string | null) | Media;
+      large?: (string | null) | Media;
+      alt: string;
+    };
+  };
+  boxGridSection1?: {
+    show?: boolean | null;
+    /**
+     * e.g., five-boxes, container, option-1, no-bg, wider
+     */
+    className?: string | null;
+    backgroundColor?: string | null;
+    textColor?: string | null;
+    boxBackgroundColor?: string | null;
+    boxTextColor?: string | null;
+    boxHoverBackgroundColor?: string | null;
+    numberOfColumns?: ('one-box' | 'two-boxes' | 'three-boxes' | 'four-boxes' | 'five-boxes') | null;
+    headingBefore?: string | null;
+    headingBeforeColor?: string | null;
+    contentBefore?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    /**
+     * Drag to reorder boxes
+     */
+    boxes?:
+      | {
+          heading: string;
+          headingColor?: string | null;
+          content: {
+            root: {
+              type: string;
+              children: {
+                type: any;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          };
+          icon?: (string | null) | Media;
+          iconAlt?: string | null;
+          link?: {
+            url?: string | null;
+            text?: string | null;
+            openInNewTab?: boolean | null;
+          };
+          /**
+           * Override global box background for this box
+           */
+          customBackgroundColor?: string | null;
+          display?: boolean | null;
+          id?: string | null;
+        }[]
+      | null;
+    contentAfter?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+  };
+  bannerSection?: {
+    show?: boolean | null;
+    /**
+     * e.g., dark, hide-divider, viewport, background-9
+     */
+    className?: string | null;
+    backgroundColor?: string | null;
+    textColor?: string | null;
+    heading?: string | null;
+    headingColor?: string | null;
+    subheading?: string | null;
+    subheadingColor?: string | null;
+    columnLayout?: ('single' | 'columns-two' | 'columns-three') | null;
+    leftColumnContent?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    rightColumnContent?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    backgroundImage?: {
+      mobile?: (string | null) | Media;
+      tablet?: (string | null) | Media;
+      desktop?: (string | null) | Media;
+      large?: (string | null) | Media;
+      alt?: string | null;
+    };
+  };
+  columnSection: {
+    show?: boolean | null;
+    /**
+     * e.g., viewport, container
+     */
+    className?: string | null;
+    backgroundColor?: string | null;
+    textColor?: string | null;
+    heading?: string | null;
+    headingColor?: string | null;
+    content: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    textAlign?: ('left' | 'center' | 'right') | null;
+  };
+  boxGridSection2?: {
+    show?: boolean | null;
+    className?: string | null;
+    backgroundColor?: string | null;
+    textColor?: string | null;
+    headingBefore?: string | null;
+    headingBeforeColor?: string | null;
+    contentBefore?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    /**
+     * Drag to reorder boxes
+     */
+    boxes?:
+      | {
+          heading: string;
+          headingColor?: string | null;
+          content: {
+            root: {
+              type: string;
+              children: {
+                type: any;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          };
+          customBackgroundColor?: string | null;
+          display?: boolean | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  imageColumnSection?: {
+    show?: boolean | null;
+    className?: string | null;
+    backgroundColor?: string | null;
+    textAlign?: ('left' | 'center' | 'right') | null;
+    image?: (string | null) | Media;
+    imageAlt?: string | null;
+    imageWidth?: string | null;
+    imageHeight?: string | null;
+  };
+  /**
+   * Drag to reorder sections on the page
+   */
+  sectionOrder?:
+    | {
+        section: 'hero' | 'intro' | 'halfImage1' | 'boxGrid1' | 'banner' | 'column' | 'boxGrid2' | 'imageColumn';
+        id?: string | null;
+      }[]
+    | null;
+  globalStyles?: {
+    /**
+     * CSS max-width value (e.g., 1200px, 100%)
+     */
+    containerMaxWidth?: string | null;
+    /**
+     * CSS padding value (e.g., 20px, 1rem 2rem)
+     */
+    containerPadding?: string | null;
+    /**
+     * Spacing between sections (e.g., 60px, 4rem)
+     */
+    sectionSpacing?: string | null;
+    /**
+     * CSS font-family value
+     */
+    fontFamily?: string | null;
+    /**
+     * Primary brand color
+     */
+    primaryColor?: string | null;
+    /**
+     * Secondary brand color
+     */
+    secondaryColor?: string | null;
+    /**
+     * Default text color for the page
+     */
+    textColor?: string | null;
+    /**
+     * Default color for links
+     */
+    linkColor?: string | null;
+    /**
+     * Color for links on hover
+     */
+    linkHoverColor?: string | null;
+  };
+  typographySettings?: {
+    h1FontSize?: string | null;
+    h1Color?: string | null;
+    h1FontWeight?: string | null;
+    h2FontSize?: string | null;
+    h2Color?: string | null;
+    h2FontWeight?: string | null;
+    h3FontSize?: string | null;
+    h3Color?: string | null;
+    bodyFontSize?: string | null;
+    bodyLineHeight?: string | null;
+    paragraphSpacing?: string | null;
+    /**
+     * CSS list-style-type (e.g., disc, circle, square, none)
+     */
+    listStyleType?: string | null;
+    listMarginLeft?: string | null;
+  };
+  boxGridStyles?: {
+    /**
+     * Internal padding for boxes (e.g., 30px, 2rem)
+     */
+    boxPadding?: string | null;
+    boxBorderRadius?: string | null;
+    /**
+     * CSS border value (e.g., 1px solid #ccc)
+     */
+    boxBorder?: string | null;
+    boxShadow?: string | null;
+    boxHoverShadow?: string | null;
+    /**
+     * Space between boxes (e.g., 20px, 1.5rem)
+     */
+    boxGap?: string | null;
+    boxMinHeight?: string | null;
+    boxTextAlign?: ('left' | 'center' | 'right') | null;
+  };
+  animationSettings?: {
+    enableAnimations?: boolean | null;
+    /**
+     * Duration for fade in animations (e.g., 1s, 2s)
+     */
+    fadeInDuration?: string | null;
+    /**
+     * Delay before fade in starts (e.g., 0.2s)
+     */
+    fadeInDelay?: string | null;
+    /**
+     * CSS easing function
+     */
+    animationEasing?: string | null;
+    /**
+     * Enable scroll-triggered animations
+     */
+    enableWowAnimations?: boolean | null;
+    /**
+     * Distance from viewport to trigger animation (px)
+     */
+    wowOffset?: string | null;
+  };
+  seoSettings?: {
+    metaTitle?: string | null;
+    metaDescription?: string | null;
+    ogImage?: (string | null) | Media;
+    /**
+     * Comma-separated keywords for SEO
+     */
+    keywords?: string | null;
+    canonicalUrl?: string | null;
+    robots?: ('index,follow' | 'noindex,follow' | 'index,nofollow' | 'noindex,nofollow') | null;
+  };
+  mobileSettings?: {
+    /**
+     * Screen width for mobile (e.g., 768px)
+     */
+    mobileBreakpoint?: string | null;
+    /**
+     * Screen width for tablet (e.g., 1024px)
+     */
+    tabletBreakpoint?: string | null;
+    /**
+     * Percentage adjustment for mobile fonts (e.g., 90%)
+     */
+    mobileFontSizeAdjustment?: string | null;
+    /**
+     * Automatically stack sections vertically on mobile devices
+     */
+    mobileStackSections?: boolean | null;
+  };
+  advancedSettings?: {
+    /**
+     * Add custom CSS styles for this page
+     */
+    customCSS?: string | null;
+    /**
+     * Add custom JavaScript code for this page
+     */
+    customJS?: string | null;
+    lazyLoadImages?: boolean | null;
+    /**
+     * Preload above-the-fold images for better performance
+     */
+    preloadImages?: boolean | null;
+  };
+  /**
+   * Toggle to enable/disable this component
+   */
+  isActive?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -40014,6 +40535,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'sitemap-page-component';
         value: string | SitemapPageComponent;
+      } | null)
+    | ({
+        relationTo: 'membership-page-component';
+        value: string | MembershipPageComponent;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -65679,6 +66204,281 @@ export interface SitemapPageComponentSelect<T extends boolean = true> {
         responsiveImageSizes?: T;
         minifyCSS?: T;
         minifyJS?: T;
+      };
+  isActive?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "membership-page-component_select".
+ */
+export interface MembershipPageComponentSelect<T extends boolean = true> {
+  componentName?: T;
+  heroSection?:
+    | T
+    | {
+        show?: T;
+        className?: T;
+        backgroundColor?: T;
+        backgroundImage?:
+          | T
+          | {
+              mobile?: T;
+              tablet?: T;
+              desktop?: T;
+              large?: T;
+              alt?: T;
+            };
+        breadcrumbs?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              ariaLabel?: T;
+              id?: T;
+            };
+        title?: T;
+        titleColor?: T;
+        titleFontSize?: T;
+        mediaImage?:
+          | T
+          | {
+              mobile?: T;
+              tablet?: T;
+              desktop?: T;
+              large?: T;
+              alt?: T;
+            };
+      };
+  introSection?:
+    | T
+    | {
+        show?: T;
+        className?: T;
+        backgroundColor?: T;
+        textColor?: T;
+        paddingBottom?: T;
+        logo?: T;
+        logoAlt?: T;
+        logoWidth?: T;
+        logoHeight?: T;
+        heading?: T;
+        headingColor?: T;
+        contentParagraph1?: T;
+        contentParagraph2?: T;
+      };
+  halfImageSection1?:
+    | T
+    | {
+        show?: T;
+        className?: T;
+        backgroundColor?: T;
+        textColor?: T;
+        imagePosition?: T;
+        verticalAlignment?: T;
+        marginBottom?: T;
+        copyPadding?: T;
+        heading?: T;
+        headingColor?: T;
+        content?: T;
+        image?:
+          | T
+          | {
+              mobile?: T;
+              tablet?: T;
+              desktop?: T;
+              large?: T;
+              alt?: T;
+            };
+      };
+  boxGridSection1?:
+    | T
+    | {
+        show?: T;
+        className?: T;
+        backgroundColor?: T;
+        textColor?: T;
+        boxBackgroundColor?: T;
+        boxTextColor?: T;
+        boxHoverBackgroundColor?: T;
+        numberOfColumns?: T;
+        headingBefore?: T;
+        headingBeforeColor?: T;
+        contentBefore?: T;
+        boxes?:
+          | T
+          | {
+              heading?: T;
+              headingColor?: T;
+              content?: T;
+              icon?: T;
+              iconAlt?: T;
+              link?:
+                | T
+                | {
+                    url?: T;
+                    text?: T;
+                    openInNewTab?: T;
+                  };
+              customBackgroundColor?: T;
+              display?: T;
+              id?: T;
+            };
+        contentAfter?: T;
+      };
+  bannerSection?:
+    | T
+    | {
+        show?: T;
+        className?: T;
+        backgroundColor?: T;
+        textColor?: T;
+        heading?: T;
+        headingColor?: T;
+        subheading?: T;
+        subheadingColor?: T;
+        columnLayout?: T;
+        leftColumnContent?: T;
+        rightColumnContent?: T;
+        backgroundImage?:
+          | T
+          | {
+              mobile?: T;
+              tablet?: T;
+              desktop?: T;
+              large?: T;
+              alt?: T;
+            };
+      };
+  columnSection?:
+    | T
+    | {
+        show?: T;
+        className?: T;
+        backgroundColor?: T;
+        textColor?: T;
+        heading?: T;
+        headingColor?: T;
+        content?: T;
+        textAlign?: T;
+      };
+  boxGridSection2?:
+    | T
+    | {
+        show?: T;
+        className?: T;
+        backgroundColor?: T;
+        textColor?: T;
+        headingBefore?: T;
+        headingBeforeColor?: T;
+        contentBefore?: T;
+        boxes?:
+          | T
+          | {
+              heading?: T;
+              headingColor?: T;
+              content?: T;
+              customBackgroundColor?: T;
+              display?: T;
+              id?: T;
+            };
+      };
+  imageColumnSection?:
+    | T
+    | {
+        show?: T;
+        className?: T;
+        backgroundColor?: T;
+        textAlign?: T;
+        image?: T;
+        imageAlt?: T;
+        imageWidth?: T;
+        imageHeight?: T;
+      };
+  sectionOrder?:
+    | T
+    | {
+        section?: T;
+        id?: T;
+      };
+  globalStyles?:
+    | T
+    | {
+        containerMaxWidth?: T;
+        containerPadding?: T;
+        sectionSpacing?: T;
+        fontFamily?: T;
+        primaryColor?: T;
+        secondaryColor?: T;
+        textColor?: T;
+        linkColor?: T;
+        linkHoverColor?: T;
+      };
+  typographySettings?:
+    | T
+    | {
+        h1FontSize?: T;
+        h1Color?: T;
+        h1FontWeight?: T;
+        h2FontSize?: T;
+        h2Color?: T;
+        h2FontWeight?: T;
+        h3FontSize?: T;
+        h3Color?: T;
+        bodyFontSize?: T;
+        bodyLineHeight?: T;
+        paragraphSpacing?: T;
+        listStyleType?: T;
+        listMarginLeft?: T;
+      };
+  boxGridStyles?:
+    | T
+    | {
+        boxPadding?: T;
+        boxBorderRadius?: T;
+        boxBorder?: T;
+        boxShadow?: T;
+        boxHoverShadow?: T;
+        boxGap?: T;
+        boxMinHeight?: T;
+        boxTextAlign?: T;
+      };
+  animationSettings?:
+    | T
+    | {
+        enableAnimations?: T;
+        fadeInDuration?: T;
+        fadeInDelay?: T;
+        animationEasing?: T;
+        enableWowAnimations?: T;
+        wowOffset?: T;
+      };
+  seoSettings?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+        ogImage?: T;
+        keywords?: T;
+        canonicalUrl?: T;
+        robots?: T;
+      };
+  mobileSettings?:
+    | T
+    | {
+        mobileBreakpoint?: T;
+        tabletBreakpoint?: T;
+        mobileFontSizeAdjustment?: T;
+        mobileStackSections?: T;
+      };
+  advancedSettings?:
+    | T
+    | {
+        customCSS?: T;
+        customJS?: T;
+        lazyLoadImages?: T;
+        preloadImages?: T;
       };
   isActive?: T;
   updatedAt?: T;

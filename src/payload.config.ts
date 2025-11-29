@@ -131,6 +131,7 @@ import { searchHandler } from './endpoints/search'
 import { TermsAndConditionsPageComponent } from './collections/TermsAndConditionsComponent'
 import { PrivacyPolicyPageComponent } from './collections/PrivacyPolicyPageComponent'
 import { SitemapPageComponent } from './collections/SitemapPageComponent'
+import { MembershipPageComponent } from './collections/specialRewards/MembershipPageComponent'
 
 // import { lexicalEditor } from '@payloadcms/richtext-lexical'
 
@@ -279,6 +280,8 @@ export default buildConfig({
     TermsAndConditionsPageComponent,
     PrivacyPolicyPageComponent,
     SitemapPageComponent,
+
+    MembershipPageComponent,
   ],
   globals: [Navbar, Home, ProviderLocatorComponent],
   editor: lexicalEditor(),
@@ -290,7 +293,12 @@ export default buildConfig({
     url: process.env.DATABASE_URI || '',
   }),
   sharp,
-  cors: ['http://localhost:3000', 'https://goldfingersaesthetics-zeta.vercel.app'],
+  cors: [
+    'http://localhost:3000',
+    'https://goldfingersaesthetics-zeta.vercel.app',
+    'https://www.goldfingersaesthetics.com',
+    'https://lastgoldfingersaesthetics.vercel.app',
+  ],
   plugins: [
     payloadCloudPlugin(),
     // storage-adapter-placeholder
